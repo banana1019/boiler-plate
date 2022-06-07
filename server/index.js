@@ -65,7 +65,7 @@ app.post("/api/users/login", (req, res) => {
       user.generateToken((err, user) => {
         if (err) return res.status(400).send(err);
 
-        // 토큰을 저장한다. 어디에? 쿠키, 로컬스토리지, ...
+        // 토큰을 저장한다. 어디에? 쿠키, 로컬스토리지 등등
         res
           .cookie("x_auth", user.token)
           .status(200)
